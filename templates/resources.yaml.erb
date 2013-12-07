@@ -1,0 +1,22 @@
+localhost:
+  tags: ''
+  osFamily: unix
+  username: rundeck
+  osArch: amd64
+  osVersion: 3.5.0-23-generic
+  description: Rundeck server node
+  nodename: localhost
+  hostname: localhost
+  osName: Linux
+<% @nodes.each do |node| -%>
+<%= node -%>:
+  tags: ''
+  osFamily: unix
+  username: rundeck
+  osArch: amd64
+  osVersion: 3.5.0-23-generic
+  description: Rundeck server node
+  nodename: <%= node %>
+  hostname: <%= node %>
+  osName: Linux
+<% end -%>

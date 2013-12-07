@@ -1,0 +1,8 @@
+project.name=<%= @project_name %>
+project.ssh-keypath=<%= scope.lookupvar('rundeck::params::home_dir') -%>/.ssh/id_rsa
+<% if @resources_user and @resources_pass and @resources_url -%>
+project.resources.url=http\://<%= @resources_user-%>\:<%= @resources_pass-%>@<%= @resources_url -%>/hosts?rundeck\=true&format\=yaml
+<% end -%>
+project.resources.file=<%= scope.lookupvar('rundeck::params::project_dir') -%>/projects/<%= @project_name -%>/etc/resources.yaml
+service.FileCopier.default.provider=jsch-scp
+service.NodeExecutor.default.provider=jsch-ssh

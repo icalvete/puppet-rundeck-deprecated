@@ -1,0 +1,17 @@
+<joblist>
+	<job>
+		<id>5568f654-be03-4a44-81ed-1ceb915eafd6</id>
+		<loglevel>INFO</loglevel>
+		<sequence keepgoing='false' strategy='node-first'>
+			<command>
+				<exec>ls</exec>
+			</command>
+		</sequence>
+        	<description></description>
+		<name>sp_job</name>
+		<context>
+			<project>sp</project>
+		</context>
+		<uuid>5568f654-be03-4a44-81ed-1ceb915eafd6</uuid>
+	</job>
+</joblist>
