@@ -5,7 +5,7 @@ rdeck.base=/var/lib/rundeck
 #rss.enabled if set to true enables RSS feeds that are public (non-authenticated)
 rss.enabled=false
 # change hostname here
-grails.serverURL=http://localhost:4440
+#grails.serverURL=http://localhost:4440
 dataSource.dbCreate = update
 #dataSource.url = jdbc:h2:file:/var/lib/rundeck/data/rundeckdb;MVCC=true
 dataSource.url = jdbc:mysql://<%= scope.lookupvar('rundeck::params::db_host') -%>/<%= scope.lookupvar('rundeck::params::db') -%>?autoReconnect=true
