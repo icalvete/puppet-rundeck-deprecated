@@ -13,7 +13,7 @@ See [Rundeck site](http://rundeck.org/)
 
 ##Example:
 
-```
+```puppet
 node 'ubuntu01.smartpurposes.net' inherits test_defaults {
   include roles::puppet_agent
   include rundeck
