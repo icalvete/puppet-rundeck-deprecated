@@ -1,5 +1,6 @@
 class rundeck::params {
 
+  $datasource    = 'h2'
   $db_host       = hiera('rundeck_db_host')
   $db            = hiera('rundeck_db')
   $db_user       = hiera('rundeck_db_user')
@@ -11,7 +12,7 @@ class rundeck::params {
   $repo_user     = false
   $repo_pass     = false
   $repo_path     = 'deb'
-  $repo_resource = 'rundeck-1.6.2-1-GA.deb'
+  $repo_resource = 'rundeck-2.4.1-1-GA.deb'
 
   $admin_user    = hiera('rundeck_admin_user')
   $admin_pass    = hiera('rundeck_admin_pass')
@@ -25,6 +26,11 @@ class rundeck::params {
   $project_dir   = '/var/rundeck'
   $user          = 'rundeck'
   $group         = 'rundeck'
+
+  $exportedjobs  = "${project_dir}/jobs"
+
+  $ssh_public_key = hiera('rundeck_ssh_public_key')
+  $ssh_key        = hiera('rundeck_ssh_key')
 
   case $::operatingsystem {
     /^(Debian|Ubuntu)$/: {

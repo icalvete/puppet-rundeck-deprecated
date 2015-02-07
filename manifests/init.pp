@@ -1,4 +1,8 @@
-class rundeck () inherits rundeck::params {
+class rundeck (
+
+  $datasource = $rundeck::params::datasource
+
+) inherits rundeck::params {
 
   anchor {'rundeck::begin':
     before => Class['rundeck::install']

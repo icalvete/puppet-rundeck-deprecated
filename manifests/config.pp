@@ -35,7 +35,7 @@ class rundeck::config {
     mode    => '0644'
   }
 
-  file{'rundeck-jobs-directory':
+  file{$rundeck::params::expoertedjobs:
     ensure  => present,
     source  => "puppet:///modules/${module_name}/jobs",
     path    => "${rundeck::params::project_dir}/jobs",
@@ -44,7 +44,7 @@ class rundeck::config {
     group   => $rundeck::params::group,
     mode    => '0755',
   }
-
+  
   file{"${rundeck::params::home_dir}/.ssh":
     ensure  => directory,
     owner   => $rundeck::params::user,
@@ -53,7 +53,7 @@ class rundeck::config {
 
   file{'rundeck_id_rsa.pub':
     path    => "${rundeck::params::home_dir}/.ssh/id_rsa.pub",
-    source  => 'puppet:///modules/sp/rundeck_ssh_keys/id_rsa.pub',
+    content => $rundeck::params::ssh_public_key,
     owner   => $rundeck::params::user,
     group   => $rundeck::params::group,
     mode    => '0644',
@@ -62,7 +62,7 @@ class rundeck::config {
 
   file{'rundeck_id_rsa':
     path    => "${rundeck::params::home_dir}/.ssh/id_rsa",
-    source  => 'puppet:///modules/sp/rundeck_ssh_keys/id_rsa',
+    content => $rundeck::params::ssh_key,
     owner   => $rundeck::params::user,
     group   => $rundeck::params::group,
     mode    => '0600',

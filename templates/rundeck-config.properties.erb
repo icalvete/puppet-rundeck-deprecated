@@ -6,8 +6,15 @@ rdeck.base=/var/lib/rundeck
 rss.enabled=false
 # change hostname here
 #grails.serverURL=http://localhost:4440
+
+<% case scope.lookupvar('rundeck::datasource') 
+  when "mysql"
+-%> 
 dataSource.dbCreate = update
-#dataSource.url = jdbc:h2:file:/var/lib/rundeck/data/rundeckdb;MVCC=true
 dataSource.url = jdbc:mysql://<%= scope.lookupvar('rundeck::params::db_host') -%>/<%= scope.lookupvar('rundeck::params::db') -%>?autoReconnect=true
 dataSource.username = <%= scope.lookupvar('rundeck::params::db_user') %>
 dataSource.password = <%= scope.lookupvar('rundeck::params::db_pass') %>
+<% when "h2" -%>
+dataSource.dbCreate = update
+dataSource.url = jdbc:h2:file:/var/lib/rundeck/data/rundeckdb;MVCC=true
+<% end -%>

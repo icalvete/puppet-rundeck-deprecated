@@ -1,17 +1,17 @@
 <joblist>
-	<job>
-		<id>5568f654-be03-4a44-81ed-1ceb915eafd6</id>
-		<loglevel>INFO</loglevel>
-		<sequence keepgoing='false' strategy='node-first'>
-			<command>
-				<exec>ls</exec>
-			</command>
-		</sequence>
-        	<description></description>
-		<name>sp_job</name>
-		<context>
-			<project>sp</project>
-		</context>
-		<uuid>5568f654-be03-4a44-81ed-1ceb915eafd6</uuid>
-	</job>
+  <job>
+    <id>59e2e636-700c-4dce-93f2-a2e6958b90fd</id>
+    <loglevel>INFO</loglevel>
+    <sequence keepgoing='false' strategy='node-first'>
+      <command>
+        <exec>pwd &amp;&amp; ls -la</exec>
+      </command>
+    </sequence>
+    <description></description>
+    <name>sp_job_xml</name>
+    <context>
+      <project>sp</project>
+    </context>
+    <uuid>59e2e636-700c-4dce-93f2-a2e6958b90fd</uuid>
+  </job>
 </joblist>

@@ -1,0 +1,11 @@
+- id: 57c7bdb8-5c87-4bfa-ac42-ae464f6f75d5
+  project: sp
+  loglevel: INFO
+  sequence:
+    keepgoing: false
+    strategy: node-first
+    commands:
+    - exec: pwd && ls -la
+  description: ''
+  name: sp_job_yaml
+  uuid: 57c7bdb8-5c87-4bfa-ac42-ae464f6f75d5

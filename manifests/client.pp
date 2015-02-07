@@ -17,7 +17,7 @@ class rundeck::client inherits rundeck::params {
     ensure => present,
     type   => rsa,
     user   => $rundeck::params::user,
-    key    => $sp::params::rundeck_ssh_public_key
+    key    => $rundeck::params::ssh_public_key
   }
 
   $host_aliases = [ $ipaddress, $hostname]
