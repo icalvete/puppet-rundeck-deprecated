@@ -2,6 +2,8 @@
 
 Puppet manifest to install and configure Rundeck
 
+## This module has been deprecated in favour of https://github.com/voxpupuli/puppet-rundeck.
+
 [![Build Status](https://secure.travis-ci.org/icalvete/puppet-rundeck.png)](http://travis-ci.org/icalvete/puppet-rundeck)
 
 See [Rundeck site](http://rundeck.org/)
